@@ -50,11 +50,16 @@ We are going to divide the workflow in 2 sections , one dealing the ODI data on 
 ## Expected Output:
 **_As you can observe here, for calendar year when Kohli scored more than 1000 runs below listed are the crucial factors which helps him achieving the same 
 No of runs for each calender year increase if below variables increases:
-1.No of Matches played in each calendar year.
-2.No. of 4s hit in every ODI match.
-3.No. of Centuries hit in a calendar year.
-4.Every time he involved in a chase his run tally increases.
-His Strike rate has the least impact on the total runs scored in an year however no of sixes or batting in first innings do leave an impact to some extent.
+
+### 1.No of Matches played in each calendar year.
+
+### 2.No. of 4s hit in every ODI match.
+
+### 3.No. of Centuries hit in a calendar year.
+
+### 4.Every time he involved in a chase his run tally increases.
+
+### His Strike rate has the least impact on the total runs scored in an year however no of sixes or batting in first innings do leave an impact to some extent.
 _**
 
  ![VK_TotalRuns_Barplot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_TotalRuns_Barplot.jpg)
@@ -80,11 +85,13 @@ _**
 
 ## Expected Output:
 **_As you can observe here, for matches played in Home and Away there is massive difference between amongst few variables as listed below:
-1.Kohli played  more No of Matches outside India.
-2.Kohli scored  more No of Runs outside India.
-3.Kohli has hit more No. of Centuries outside India.
-4.Kohli has hit more No. of 4s outside India.
-This exaclty confirms with our observation found on the earlier section on pre calendar year basis although Strike rate,6s and Avg there is not much of a difference observed here_**
+### 1.Kohli played  more No of Matches outside India.
+
+### 2.Kohli scored  more No of Runs outside India.
+
+### 3.Kohli has hit more No. of Centuries outside India.
+### 4.Kohli has hit more No. of 4s outside India.
+### This exaclty confirms with our observation found on the earlier section on pre calendar year basis although Strike rate,6s and Avg there is not much of a difference observed here_**
 
  ![VK_Venuewise_Piechartplot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_Venuewise_Piechartplot.jpg)
 
