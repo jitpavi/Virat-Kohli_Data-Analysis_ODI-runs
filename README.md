@@ -1,7 +1,7 @@
 # Project Name - Virat-Kohli_Data-Analysis_ODI-runs
 
 #### -- Project Status: [Active]
-Need to annotations in all the bar plot and explore more datasets to understand better which other factos can influence the batting performance of Virat Kohli
+Need to add annotations in all the bar plot and explore more datasets to understand better which other factos can influence the batting performance of Virat Kohli
 
 ## Project Intro/Objective:
 The purpose of the project is to perform an in-depth analysis of Virat Kohli's ODI career statistics and understand what all factors are crucial which influences stellar performance when it comes to batting.I have taken into account all the important data which can be helpful in deriving the critical variables.
