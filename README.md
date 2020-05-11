@@ -68,7 +68,7 @@ _**
 * [COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisationv1.0.py](https://github.com/jitpavi/COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisation/blob/master/COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisation%20v1.0.py)
 
 ## Versioning
-Code version - v1.2
+Code version - v1.0
 
 ## Author:
 
@@ -76,10 +76,8 @@ Code version - v1.2
 
 ## Acknowledgments:
 
-* https://api.covid19india.org/csv/latest/state_wise_daily.csv
-*	https://raw.githubusercontent.com/Subhash9325/GeoJson-Data-of-Indian-States/master/Indian_States
-
+* https://www.espncricinfo.com/india/content/player/253802.html
 
 ## References:
 
-* https://towardsdatascience.com/interactive-covid-19-visualizations-using-plotly-with-4-lines-of-code-fa33b334ab84
+* https://www.kaggle.com/vijaydwivedi052/analysis-of-virat-kohli-in-test-matches
