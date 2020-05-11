@@ -101,6 +101,7 @@ col_head = soup_heading_ground_head[0].findAll('th')
 head_list = [col.text.strip() for col in col_head]
 
 # Create RAW Data Dataframe holding information on Venue basis
+
 kohli_dict_ground= pd.DataFrame(final_list_ground_data,columns=head_list)
 
 
@@ -119,7 +120,6 @@ kohli_dict_ground[['Ave','SR']] = kohli_dict_ground[['Ave','SR']].astype(float)
 
 kohli_dict_ground.to_csv(r"C:\Users\jpavithr\OneDrive - Capgemini\Desktop\Automation Drive - Python training\Pandas\real python\Virat_kohli_statistics\Virat_kohli_grounddata.csv",index=False)
 
-
 # Explorative Data Analysis of data on the basis matches played at each Venue
 
 Venuewise_Record = kohli_dict_ground.groupby('Venue_location',as_index=False).agg({'Mat':'sum','Inns':'sum','Runs':'sum','SR':'mean',
@@ -135,6 +135,7 @@ Venuewise_Record.to_csv(r"C:\Users\jpavithr\OneDrive - Capgemini\Desktop\Automat
 # Explorative Data Analysis based on the Runs scored in ODI  for each calender year
 
 # Data Analysis of Runs scored against each variable
+
 Venue_runs = kohli_dict.groupby('Venue').agg({'Innings Runs Scored':'sum'}).sort_values('Innings Runs Scored',ascending=False)
 OppTeam_runs = kohli_dict.groupby('Opposition Team').agg({'Innings Runs Scored':'sum'}).sort_values('Innings Runs Scored',ascending=False)
 Batpos_runs = kohli_dict.groupby('Batting Position').agg({'Innings Runs Scored':'sum'}).sort_values('Innings Runs Scored',ascending=False)
@@ -143,12 +144,14 @@ Year_Runs = kohli_dict.groupby('Year Played').agg({'Innings Runs Scored':'sum'})
 
 
 # Data Analysis of Centuries against each variable
+
 OppTeam_cent = kohli_dict[kohli_dict['Innings Runs Scored']>=100].groupby('Opposition Team').agg({'Innings Runs Scored':'count'}).sort_values('Innings Runs Scored',ascending=False)
 Year_cent = kohli_dict[kohli_dict['Innings Runs Scored']>=100].groupby('Year Played').agg({'Innings Runs Scored':'count'}).sort_values('Innings Runs Scored',ascending=False)
 Innings_cent = kohli_dict[kohli_dict['Innings Runs Scored']>=100].groupby('Innings').agg({'Innings Runs Scored':'count'}).sort_values('Innings Runs Scored',ascending=False)
 Venue_cent = kohli_dict[kohli_dict['Innings Runs Scored']>=100].groupby('Venue').agg({'Innings Runs Scored':'count'}).sort_values('Innings Runs Scored',ascending=False)
 
 # Data Analysis of Strike Rate and Average runs against each variable
+
 Year_SR_unsort = kohli_dict.groupby('Year Played').agg({'Strike Rate':'mean'})
 Year_avg_unsort = kohli_dict.groupby('Year Played').agg({'Innings Runs Scored':'mean'})
 
@@ -204,14 +207,14 @@ ax3[1,1].legend(labels = ["Count of Centuries"],loc='upper center',fontsize=12)
 plt.savefig(r"C:\Users\jpavithr\OneDrive - Capgemini\Desktop\Automation Drive - Python training\Pandas\real python\Virat_kohli_statistics\VK_Centuries_barplot.jpg")
 
 
-# Define the input variables for Pic chart plot
+# Define the input variables for Pie chart plot
 
-X = ['Venuewise_Runs', 'Venuewise_SR', 'Venuewise_Matchcount', 'Venuewise_4s', 'Venuewise_6s', 'Venuewise_6s', 'Venuewise_Avg','Venuewise_Centuries']
+X = ['Venuewise_Runs', 'Venuewise_SR', 'Venuewise_Matchcount', 'Venuewise_4s', 'Venuewise_6s','Venuewise_Centuries']
 Y = Venuewise_Record['Venuewise_Runs']
 
-# Create a Figure object with dimension 2 rows and 4 columns for showing plot fo each variable
+# Create a Figure object with dimension 2 rows and 3 columns for showing plot fo each variable
 
-fig4,ax4 = plt.subplots(nrows=2,ncols=4,figsize=(14,7))
+fig4,ax4 = plt.subplots(nrows=2,ncols=3,figsize=(14,7))
 fig4.canvas.set_window_title("Pie Chart Plot showing relation between 8 Variables for Venue in Home and Away")
 fig4.tight_layout(pad=3.0)
 
@@ -227,9 +230,9 @@ def Create_pie(size,labels,i,j):
     ax.legend(labels,loc = 'lower left',bbox_to_anchor=(0.0, 0.95))
 
 for i in range(2):
-    for j in range(4):
-        k= j + i*4
-        Create_pie([Venuewise_Record[X[k]][0],Venuewise_Record[X[k]][1]],[f"Home - {(re.search('.*$',X[k])).group()}",f"Away - {(re.search('.*$',X[k])).group()}"],i,j)
+    for j in range(3):
+        k= j + i*3
+        Create_pie([Venuewise_Record[X[k]][0],Venuewise_Record[X[k]][1]],[f"Away - {(re.search('.*$',X[k])).group()}",f"Home - {(re.search('.*$',X[k])).group()}"],i,j)
 
 fig4.subplots_adjust(wspace = 0.25)
 plt.savefig(r"C:\Users\jpavithr\OneDrive - Capgemini\Desktop\Automation Drive - Python training\Pandas\real python\Virat_kohli_statistics\VK_Venuewise_Piechartplot.jpg")
@@ -276,5 +279,5 @@ ax7.figure.subplots_adjust(bottom = 0.3)
 plt.savefig(r"C:\Users\jpavithr\OneDrive - Capgemini\Desktop\Automation Drive - Python training\Pandas\real python\Virat_kohli_statistics\VK_Yearwise_HeatMap.jpg")
 
 
-#plt.show()
+plt.show()
 plt.close()
