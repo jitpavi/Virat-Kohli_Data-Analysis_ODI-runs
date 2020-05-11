@@ -1,4 +1,4 @@
-# Project Name - # Virat-Kohli_Data-Analysis_ODI-runs
+# Project Name - Virat-Kohli_Data-Analysis_ODI-runs
 
 #### -- Project Status: [Active]
 Need to annotations in all the bar plot and explore more datasets to understand better which other factos can influence the batting performance of Virat Kohli
@@ -37,35 +37,59 @@ The purpose of the project is to perform an in-depth analysis of Virat Kohli's O
   * Numpy
 
 ### Workflow:
-1. Using the API call create a new dataframe and filter with those cases which are being Confirmed.
-2. Inorder to acheive the output we need three columns namely Date detected, State Name and Cases Confirmed.
-3. Information received through API has columns State codes mentioned in the form of columns which needs to be converted into rows for each respective dates.
-4. Create a new List of Tuples which out of the original Dataframe which will contains the values above 3 columns.
-5. Using the Tuples we create a master Dataframe which will be used to build the output.
+We are going to divide the workflow in 2 sections , one dealing the ODI data on calendar year basis and 2nd one based on the Venue:
+
+## Calender Year Basis:
+1. Through web scraping we access and download the required data of Kohli from the ESPN website
+2. Then massive amount of Data Wrangling is performed which will be further used for analysis.
+3. Create a Dataframe holding the RAW data in a groupby form based on calander year.
+4. Perform an extensive Explorative Data Analysis considering variables like Runs, Centuries, Strike-Rate and AverageRuns
+5. Develop a correlation table understanding the impacting of each variable on the effective variable which Total runs scored yearly.
 6. Parse the Date columns into Datetime object and convert the format into "Year-Week" type.
-7. Create a groupby on the master dataframe to compute the cumulative cases reported week wise for each state/
-8. Create a new  ISO Code Dataframe holding the columns of State code and State name.
-9. Perform Data Wrangling on the ISO code dataframe and sorted the column name "Code"
-10. Iterate through the rows of ISO Code dataframe and create a Dictionary object to hold the mappings of Code names with State Names.
-
-12. Access the open source geocode Json object and save it in a JSON object variable.
-
-12. Create a fig object which will have all the required data to be displayed in the output.
-
-13. Update the geocode property of the Figure object to make the output data more presentabe.
-14. Display the data and move the week slider in the bottom to observer the cases in each states.
-
 
 ## Expected Output:
-**_As you can observe here, for every week starting from week 10 each state of India diplays the number of cases reported.
-For better understanding you can hover your mouse pointer over each state and see the figures.
-Due to lack of access to GEOCodes to Ladakh the data couldnt be displayed in the final output.
+**_As you can observe here, for calendar year when Kohli scored more than 1000 runs below listed are the crucial factors which helps him achieving the same 
+No of runs for each calender year increase if below variables increases:
+1.No of Matches played in each calendar year.
+2.No. of 4s hit in every ODI match.
+3.No. of Centuries hit in a calendar year.
+4.Every time he involved in a chase his run tally increases.
+His Strike rate has the least impact on the total runs scored in an year however no of sixes or batting in first innings do leave an impact to some extent.
 _**
 
- ![Chloropeth Map - COVID-19 Cases in India](https://github.com/jitpavi/COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisation/blob/master/Chloropeth%20Map%20-%20COVID-19%20Cases%20in%20India.JPG)
+ ![VK_TotalRuns_Barplot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_TotalRuns_Barplot.jpg)
+
+
+ ![VK_Centuries_barplot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_Centuries_barplot.jpg)
+ 
+ 
+ ![K_SRvsAvg_lineplot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_SRvsAvg_lineplot.jpg)
+
+
+ ![VK_Yearwise_RegressionPlot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_Yearwise_RegressionPlot.jpg)
+ 
+ 
+ ![VK_Yearwise_HeatMap](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_Yearwise_HeatMap.jpg)
+
+## Venue Basis:
+1. Through web scraping we access and download the required data of Kohli from the ESPN website.
+2. Then massive amount of Data Wrangling is performed which will be further used for analysis.
+3. Create a Dataframe holding the RAW data in a groupby form based on matches played (Home and Away) on each venue throughout his career.
+4. Perform an extensive Explorative Data Analysis considering variables like Runs, Centuries, 4s,6s and batting 1st or 2nd.
+5. Develop pie chart showing the relationship between all variables divided in 2 slices Home and Away data respectively.
+
+## Expected Output:
+**_As you can observe here, for matches played in Home and Away there is massive difference between amongst few variables as listed below:
+1.Kohli played  more No of Matches outside India.
+2.Kohli scored  more No of Runs outside India.
+3.Kohli has hit more No. of Centuries outside India.
+4.Kohli has hit more No. of 4s outside India.
+This exaclty confirms with our observation found on the earlier section on pre calendar year basis although Strike rate,6s and Avg there is not much of a difference observed here_**
+
+ ![VK_Venuewise_Piechartplot](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/Output%20folder/VK_Venuewise_Piechartplot.jpg)
 
 ## Featured Notebooks/Analysis/Deliverables
-* [COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisationv1.0.py](https://github.com/jitpavi/COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisation/blob/master/COVID-19-Week-Wise-Cases---Indian-State--Chloropeth-Visualisation%20v1.0.py)
+* [ViratKohli_ODI Analysis v1.0.py](https://github.com/jitpavi/Virat-Kohli_Data-Analysis_ODI-runs/blob/master/ViratKohli_ODI%20Analysis%20v1.0.py)
 
 ## Versioning
 Code version - v1.0
